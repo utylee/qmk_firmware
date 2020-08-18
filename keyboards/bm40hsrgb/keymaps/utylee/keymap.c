@@ -143,7 +143,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ARROW] = LAYOUT_planck_mit(
     KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_PGUP,    KC_PGDN,    KC_P,    KC_BSPC,
-    CTL_T(KC_TAB),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_HOME,    KC_END, _______, KC_ENT,
+    CTL_T(KC_TAB),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,  XXXXXXX ,    KC_HOME,    KC_END, _______, KC_ENT,
     KC_ENT, KC_LEFT,    KC_DOWN,    KC_UP,    KC_RGHT,    KC_B,    KC_N,    KC_LEFT,    KC_DOWN, KC_UP,  KC_RGHT, KC_ENT,
     _______, KC_LALT, KC_LGUI, LOWER,   SPACE_FN, SPACE_FN, SPACE_FN, RAISE,KC_DOWN, _______,   _______
 ),
@@ -170,7 +170,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_SPACE_FN] = LAYOUT_planck_mit(
       KC_PSCR,  _______, KC_UP,    WOW,   WOW,  XXXXXXX,  XXXXXXX,  XXXXXXX, KC_PGUP,  KC_PGDN,     XXXXXXX,    _______, 
       XXXXXXX,  KC_LEFT, KC_DOWN,  KC_RIGHT,  QWERTY,  QWERTY,  QWERTY,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
-      XXXXXXX,  XXXXXXX, XXXXXXX,  XXXXXXX,   ARROW, ARROW , _______, KC_PSCR, KC_HOME,  KC_END,     XXXXXXX,    XXXXXXX, 
+      XXXXXXX,  KC_PSCR, KC_PSCR,  XXXXXXX,   ARROW, ARROW , _______, _______, KC_HOME,  KC_END,     XXXXXXX,    XXXXXXX, 
       XXXXXXX,  KC_MPRV, KC_MPLY,  KC_MNXT,   _______,  _______,  _______, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
 ),
 
