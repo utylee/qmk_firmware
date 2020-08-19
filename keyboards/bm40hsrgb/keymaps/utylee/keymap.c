@@ -118,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
     CTL_T(KC_TAB),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_QUOT,
-    _______, RAISE_WOW, KC_LALT, LOWER_WOW, LOWER_WOW,   KC_SPC,  RAISE_WOW,   KC_RALT, KC_DOWN, _______,   _______
+    _______, KC_LALT, RAISE_WOW, LOWER_WOW, KC_SPC, SPACE_FN, SPACE_FN ,  RAISE_WOW,   KC_RALT, KC_DOWN, _______   
 ),
 /*
 [_WOW] = LAYOUT_planck_mit(
@@ -267,7 +267,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [_ADJUST_WOW] = LAYOUT_planck_mit(
     _______, RESET,   DEBUG,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, _______ ,
-    _______, _______, _______, WOW, WOW, MAC, MAC, QWERTY,  QWERTY,  MAC, _______, MAC,
+    _______, _______, _______, WOW, WOW, _______, _______, QWERTY,  QWERTY,  _______,MAC, MAC,
 
    _______, _______, _______, _______, _______, _______, _______, KC_PSCR,  _______,  _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
@@ -277,7 +277,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
 	state = update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
-    //state = update_tri_layer_state(state, _LOWER_WOW, _RAISE_WOW, _ADJUST_WOW);
+    state = update_tri_layer_state(state, _LOWER_WOW, _RAISE_WOW, _ADJUST_WOW);
 	switch (get_highest_layer(state)) {
 		case _QWERTY:
 			//rgblight_setrgb (0x00,  0xFF, 0x00);
