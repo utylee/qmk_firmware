@@ -283,7 +283,11 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 			//rgblight_setrgb (0x00,  0xFF, 0x00);
 			rgblight_sethsv(15, 15 , 15);
 			break;
-		case _MAC:
+		case _WOW:
+			//rgblight_setrgb (0x00,  0xFF, 0x00);
+			rgblight_sethsv(230, 100 , 100);
+			break;
+        case _MAC:
 			rgblight_sethsv(25, 125 , 10);
 			//rgblight_setrgb (0xFF,  0x00, 0x00);
 			break;
@@ -301,7 +305,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 			break;
 		default: //  for any other layers, or the default layer
 			//rgblight_setrgb (0xFF,  0x00, 0x00);
-			rgblight_sethsv(15, 15 , 15);
+			//rgblight_sethsv(15, 15 , 15);
+			rgblight_sethsv(230, 100 , 100);
 			break;
 		}
 	return state;
