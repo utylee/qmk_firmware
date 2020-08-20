@@ -281,11 +281,12 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 	switch (get_highest_layer(state)) {
 		case _QWERTY:
 			//rgblight_setrgb (0x00,  0xFF, 0x00);
-			rgblight_sethsv(15, 15 , 15);
+			//rgblight_sethsv(15, 15 , 15);
+			rgblight_sethsv(90, 30 , 15);
 			break;
 		case _WOW:
 			//rgblight_setrgb (0x00,  0xFF, 0x00);
-			rgblight_sethsv(230, 100 , 100);
+			rgblight_sethsv(80, 30 , 15);
 			break;
         case _MAC:
 			rgblight_sethsv(25, 125 , 10);
@@ -303,10 +304,15 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 			rgblight_sethsv(255, 255 , 50);
 			//rgblight_setrgb (0x7A,  0x00, 0xFF);
 			break;
+		case _ADJUST_WOW:
+			rgblight_sethsv(255, 255 , 15);
+			//rgblight_setrgb (0x7A,  0x00, 0xFF);
+			break;
 		default: //  for any other layers, or the default layer
 			//rgblight_setrgb (0xFF,  0x00, 0x00);
 			//rgblight_sethsv(15, 15 , 15);
-			rgblight_sethsv(230, 100 , 100);
+			rgblight_sethsv(80, 30 , 15);
+			//rgblight_setrgb (0xFF,  0x00, 0x00);
 			break;
 		}
 	return state;
