@@ -275,38 +275,54 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+void matrix_init_user(void) {
+    backlight_level(200);
+
+}
+
 layer_state_t layer_state_set_user(layer_state_t state) {
 	state = update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
     state = update_tri_layer_state(state, _LOWER_WOW, _RAISE_WOW, _ADJUST_WOW);
-	switch (get_highest_layer(state)) {
+	//switch (get_highest_layer(state)) {
+	switch (biton32(state)) {
 		case _QWERTY:
 			//rgblight_setrgb (0x00,  0xFF, 0x00);
-			rgblight_sethsv(15, 15 , 15);
+			//rgblight_sethsv(15, 15 , 15);
+			rgblight_sethsv_noeeprom(0, 0 , 10);
 			break;
 		case _WOW:
-			//rgblight_setrgb (0x00,  0xFF, 0x00);
-			rgblight_sethsv(230, 100 , 100);
+			//rgblight_setrgb (0x00dfa  0xFF, 0x00);
+			rgblight_sethsv_noeeprom(30, 218 , 15);
 			break;
         case _MAC:
-			rgblight_sethsv(25, 125 , 10);
+			rgblight_sethsv_noeeprom(170, 255 , 50);
 			//rgblight_setrgb (0xFF,  0x00, 0x00);
 			break;
 		case _RAISE:
-			rgblight_sethsv(125, 125 , 25);
+			rgblight_sethsv_noeeprom(0, 0 , 25);
 			//rgblight_setrgb (0x00,  0x00, 0xFF);
 			break;
 		case _LOWER:
 			//rgblight_setrgb (0xFF,  0x00, 0x00);
-			rgblight_sethsv(64, 64 , 25);
+			//rgblight_sethsv_noeeprom(64, 64 , 25);
+			rgblight_sethsv_noeeprom(0, 0 , 25);
 			break;
 		case _ADJUST:
-			rgblight_sethsv(255, 255 , 50);
+			rgblight_sethsv_noeeprom(255, 255 , 50);
 			//rgblight_setrgb (0x7A,  0x00, 0xFF);
 			break;
+		case _ADJUST_WOW:
+			rgblight_sethsv_noeeprom(255, 255 , 15);
+			//rgblight_setrgb (0x7A,  0x00, 0xFF);
+			break;
+		case _SPACE_FN:
+			rgblight_sethsv_noeeprom(255, 255 , 100);
+            break;
 		default: //  for any other layers, or the default layer
 			//rgblight_setrgb (0xFF,  0x00, 0x00);
-			//rgblight_sethsv(15, 15 , 15);
-			rgblight_sethsv(230, 100 , 100);
+			//rgblight_sethsv_noeeprom(15, 15 , 15);
+			rgblight_sethsv_noeeprom(170, 255 , 50);
+			//rgblight_setrgb (0xFF,  0x00, 0x00);
 			break;
 		}
 	return state;

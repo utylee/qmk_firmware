@@ -23,6 +23,9 @@
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    KPRepublic
 #define PRODUCT         BM40 Hotswap RGB
+#define BACKLIGHT_PIN   B7
+#define BACKLIGHT_LEVELS 3
+
 
 /* key matrix size */
 #define MATRIX_ROWS 4
