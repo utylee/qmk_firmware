@@ -171,7 +171,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_PSCR,  _______, KC_UP,    WOW,   WOW,  XXXXXXX,  XXXXXXX,  XXXXXXX, KC_PGUP,  KC_PGDN,     XXXXXXX,    _______, 
       XXXXXXX,  KC_LEFT, KC_DOWN,  KC_RIGHT,  QWERTY,  QWERTY,  QWERTY,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
       XXXXXXX,  KC_PSCR, KC_PSCR,  XXXXXXX,   ARROW, ARROW , _______, _______, KC_HOME,  KC_END,     XXXXXXX,    XXXXXXX, 
-      XXXXXXX,  KC_MPRV, KC_MPLY,  KC_MNXT,   _______,  _______,  _______, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
+      XXXXXXX,  KC_MPLY, KC_MPRV, KC_MNXT,   _______,  _______,  _______, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
 ),
 
 /* Lower
