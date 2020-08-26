@@ -17,6 +17,8 @@
 
 #include "config_common.h"
 
+#define FORCE_NKRO
+
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xFEED
 #define PRODUCT_ID      0x6060

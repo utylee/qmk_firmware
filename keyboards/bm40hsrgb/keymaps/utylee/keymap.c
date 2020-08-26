@@ -54,6 +54,7 @@ enum planck_keycodes {
   */
 };
 
+
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
 
@@ -168,9 +169,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * `-----------------------------------------------------------------------------------'
   */
   [_SPACE_FN] = LAYOUT_planck_mit(
-      KC_PSCR,  _______, KC_UP,    WOW,   WOW,  XXXXXXX,  XXXXXXX,  XXXXXXX, KC_PGUP,  KC_PGDN,     XXXXXXX,    _______, 
-      XXXXXXX,  KC_LEFT, KC_DOWN,  KC_RIGHT,  QWERTY,  QWERTY,  QWERTY,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
-      XXXXXXX,  KC_PSCR, KC_PSCR,  XXXXXXX,   ARROW, ARROW , _______, _______, KC_HOME,  KC_END,     XXXXXXX,    XXXXXXX, 
+      KC_PSCR,  KC_1, KC_2,    KC_3,   XXXXXXX,  WOW,  MAGIC_TOGGLE_NKRO,  XXXXXXX, KC_PGUP,  KC_PGDN,     XXXXXXX,    _______, 
+      XXXXXXX,  KC_4, KC_5,  KC_6,  QWERTY,  QWERTY,  QWERTY,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
+      XXXXXXX,  KC_7, KC_8,  KC_9,   KC_0, ARROW , ARROW, _______, KC_HOME,  KC_END,     XXXXXXX,    XXXXXXX, 
       XXXXXXX,  KC_MPLY, KC_MPRV, KC_MNXT,   _______,  _______,  _______, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
 ),
 
