@@ -21,6 +21,7 @@ enum layers {
   _WOW,
   _ARROW,
   _SPACE_FN,
+  _SPACE_FN2,
   _LOWER,
   _RAISE,
   _LOWER_WOW,
@@ -62,6 +63,7 @@ enum planck_keycodes {
 #define RAISE_WOW MO(_RAISE_WOW)
 
 #define SPACE_FN LT(_SPACE_FN, KC_SPC)
+#define SPACE_FN2 LT(_SPACE_FN2, KC_SPC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -80,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
     CTL_T(KC_TAB),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_QUOT,
-    _______, KC_LALT, KC_LGUI, LOWER,   SPACE_FN, SPACE_FN, KC_SPC, RAISE,   KC_RALT, _______,   _______
+    _______, KC_LALT, KC_LGUI, LOWER,   SPACE_FN, SPACE_FN2, SPACE_FN, RAISE,   KC_RALT, _______,   _______
 ),
 
 /* MAC    qwerty에서 한글키만 일단 바꾸기로
@@ -119,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
     CTL_T(KC_TAB),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_QUOT,
-    _______, KC_LALT, RAISE_WOW, LOWER_WOW, KC_SPC, SPACE_FN, SPACE_FN ,  RAISE_WOW,   KC_RALT, KC_DOWN, _______   
+    _______, KC_LALT, RAISE_WOW, LOWER_WOW, KC_SPC, SPACE_FN2, SPACE_FN ,  RAISE_WOW,   KC_RALT, KC_DOWN, _______   
 ),
 /*
 [_WOW] = LAYOUT_planck_mit(
@@ -146,7 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_PGUP,    KC_PGDN,    KC_P,    KC_BSPC,
     CTL_T(KC_TAB),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,  XXXXXXX ,    KC_HOME,    KC_END, _______, KC_ENT,
     KC_ENT, KC_LEFT,    KC_DOWN,    KC_UP,    KC_RGHT,    KC_B,    KC_N,    KC_LEFT,    KC_DOWN, KC_UP,  KC_RGHT, KC_ENT,
-    _______, KC_LALT, KC_LGUI, LOWER,   SPACE_FN, SPACE_FN, SPACE_FN, RAISE,KC_DOWN, _______,   _______
+    _______, KC_LALT, KC_LGUI, LOWER,   SPACE_FN, SPACE_FN2, SPACE_FN, RAISE,KC_DOWN, _______,   _______
 ),
 /*
 [_ARROW] = LAYOUT_planck_mit(
@@ -169,9 +171,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * `-----------------------------------------------------------------------------------'
   */
   [_SPACE_FN] = LAYOUT_planck_mit(
-      KC_PSCR,  KC_1, KC_2,    KC_3,   XXXXXXX,  WOW,  XXXXXXX, MAGIC_TOGGLE_NKRO , KC_PGUP,  KC_PGDN,     XXXXXXX,    _______, 
+      KC_PSCR,  KC_1, KC_2,    KC_3,   XXXXXXX,  WOW,  MAGIC_TOGGLE_NKRO ,XXXXXXX, XXXXXXX,  XXXXXXX,     XXXXXXX,    _______, 
+      XXXXXXX,  KC_4, KC_5,  KC_6,  QWERTY,  QWERTY,  KC_PGDN,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
+      XXXXXXX,  KC_7, KC_8,  KC_9,   KC_0, _______ , _______, _______, XXXXXXX,XXXXXXX  ,     XXXXXXX,    XXXXXXX, 
+      XXXXXXX,  KC_MPLY, KC_MPRV, KC_MNXT,   _______,  _______,  _______, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
+),
+  /* Space fn
+  * ,-----------------------------------------------------------------------------------.
+  * |PRNT SC|      |  UP  |      |      |      |      |      |      |      |      |SLEEP |
+  * |-------+------+------+------+------+-------------+------+------+------+------+------|
+  * |       | LEFT | DOWN | RIGHT|      |      |      | LEFT | DOWN |  UP  | RIGHT|      |
+  * |-------+------+------+------+------+------|------+------+------+------+------+------| 
+  * |       |      |      |      |      |      |      |      |      |      |      |      |
+  * |-------+------+------+------+------+------+------+------+------+------+------+------|
+  * |       |      |      |      |      |             |      | MUTE |VOLDWN|VOL UP|      |
+  * `-----------------------------------------------------------------------------------'
+  */
+  [_SPACE_FN] = LAYOUT_planck_mit(
+      KC_PSCR,  KC_1, KC_2,    KC_3,   XXXXXXX,  WOW,  MAGIC_TOGGLE_NKRO ,XXXXXXX, XXXXXXX,  XXXXXXX,     XXXXXXX,    _______, 
+      XXXXXXX,  KC_4, KC_5,  KC_6,  QWERTY,  QWERTY,  KC_PGDN,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
+      XXXXXXX,  KC_7, KC_8,  KC_9,   KC_0, _______ , _______, _______, XXXXXXX,XXXXXXX  ,     XXXXXXX,    XXXXXXX, 
+      XXXXXXX,  KC_MPLY, KC_MPRV, KC_MNXT,   _______,  _______,  _______, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
+),
+
+  /* Space fn 2
+  * ,-----------------------------------------------------------------------------------.
+  * |PRNT SC|      |  UP  |      |      |      |      |      |      |      |      |SLEEP |
+  * |-------+------+------+------+------+-------------+------+------+------+------+------|
+  * |       | LEFT | DOWN | RIGHT|      |      |      | LEFT | DOWN |  UP  | RIGHT|      |
+  * |-------+------+------+------+------+------|------+------+------+------+------+------| 
+  * |       |      |      |      |      |      |      |      |      |      |      |      |
+  * |-------+------+------+------+------+------+------+------+------+------+------+------|
+  * |       |      |      |      |      |             |      | MUTE |VOLDWN|VOL UP|      |
+  * `-----------------------------------------------------------------------------------'
+  */
+  [_SPACE_FN2] = LAYOUT_planck_mit(
+      KC_PSCR,  KC_1, KC_2,    KC_3,   XXXXXXX,  WOW,  MAGIC_TOGGLE_NKRO , KC_HOME,KC_PGDN,  KC_PGUP, KC_END    ,    _______, 
       XXXXXXX,  KC_4, KC_5,  KC_6,  QWERTY,  QWERTY,  QWERTY,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
-      XXXXXXX,  KC_7, KC_8,  KC_9,   KC_0, ARROW , ARROW, _______, KC_HOME,  KC_END,     XXXXXXX,    XXXXXXX, 
+      XXXXXXX,  KC_7, KC_8,  KC_9,   KC_0, ARROW , ARROW, _______, XXXXXXX,  XXXXXXX,     XXXXXXX,    XXXXXXX, 
       XXXXXXX,  KC_MPLY, KC_MPRV, KC_MNXT,   _______,  _______,  _______, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
 ),
 
