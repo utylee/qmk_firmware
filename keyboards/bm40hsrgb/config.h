@@ -29,6 +29,7 @@
 #define BACKLIGHT_LEVELS 3
 
 #define TAPPING_TERM	50
+#define TAPPING_TERM_PER_KEY
 #define RETRO_TAPPING
 
 

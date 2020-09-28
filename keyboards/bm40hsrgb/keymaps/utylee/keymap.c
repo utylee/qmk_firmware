@@ -318,6 +318,23 @@ void matrix_init_user(void) {
 
 }
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+		/*	
+        case SFT_T(KC_SPC):
+            return TAPPING_TERM + 1250;
+        case LT(1, KC_GRV):
+            return 130;
+		*/
+		case SPACE_FN:
+			return 200;
+		case SPACE_FN2:
+			return 200;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 layer_state_t layer_state_set_user(layer_state_t state) {
 	state = update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
     state = update_tri_layer_state(state, _LOWER_WOW, _RAISE_WOW, _ADJUST_WOW);
