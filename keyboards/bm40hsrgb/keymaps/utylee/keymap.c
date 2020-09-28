@@ -79,8 +79,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_mit(
-    KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-    CTL_T(KC_TAB),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
+    CTL_T(KC_ESC),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_QUOT,
     _______, KC_LALT, KC_LGUI, LOWER,   SPACE_FN, SPACE_FN2, SPACE_FN, RAISE,   KC_RALT, KC_RCTRL,   _______
 ),
@@ -118,10 +118,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_WOW] = LAYOUT_planck_mit(
-    KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-    CTL_T(KC_TAB),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
+    CTL_T(KC_ESC),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_QUOT,
-    _______, KC_LALT, RAISE_WOW, LOWER_WOW, KC_SPC, SPACE_FN2, SPACE_FN ,  RAISE_WOW,   KC_RALT, KC_DOWN, _______   
+    _______, KC_LALT, RAISE_WOW, LOWER_WOW, KC_SPC, SPACE_FN2, SPACE_FN ,  RAISE,   KC_RALT, KC_LGUI, _______   
 ),
 /*
 [_WOW] = LAYOUT_planck_mit(
@@ -145,8 +145,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_ARROW] = LAYOUT_planck_mit(
-    KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_PGUP,    KC_PGDN,    KC_P,    KC_BSPC,
-    CTL_T(KC_TAB),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,  XXXXXXX ,    KC_HOME,    KC_END, _______, KC_ENT,
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_PGUP,    KC_PGDN,    KC_P,    KC_BSPC,
+    CTL_T(KC_ESC),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,  XXXXXXX ,    KC_HOME,    KC_END, _______, KC_ENT,
     KC_ENT, KC_LEFT,    KC_DOWN,    KC_UP,    KC_RGHT,    KC_B,    KC_N,    KC_LEFT,    KC_DOWN, KC_UP,  KC_RGHT, KC_ENT,
     _______, KC_LALT, KC_LGUI, LOWER,   SPACE_FN, SPACE_FN2, SPACE_FN, RAISE,KC_DOWN, _______,   _______
 ),

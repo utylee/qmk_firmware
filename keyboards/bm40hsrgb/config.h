@@ -28,6 +28,10 @@
 #define BACKLIGHT_PIN   B7
 #define BACKLIGHT_LEVELS 3
 
+#define TAPPING_TERM	50
+#define RETRO_TAPPING
+
+
 
 /* key matrix size */
 #define MATRIX_ROWS 4
