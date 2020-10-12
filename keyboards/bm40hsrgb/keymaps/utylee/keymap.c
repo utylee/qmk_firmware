@@ -22,6 +22,7 @@ enum layers {
   _ARROW,
   _SPACE_FN,
   _SPACE_FN2,
+  _FUNC,
   _LOWER,
   _RAISE,
   _LOWER_WOW,
@@ -81,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT_planck_mit(
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
     CTL_T(KC_ESC),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_QUOT,
+    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M, LT(_FUNC, KC_COMM), KC_DOT,  KC_SLSH, KC_QUOT,
     _______, KC_LALT, KC_LGUI, LOWER,   SPACE_FN, SPACE_FN2, SPACE_FN, RAISE,   KC_RALT, KC_RCTRL,   _______
 ),
 
@@ -195,6 +196,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       XXXXXXX,  KC_MPLY, KC_MPRV, KC_MNXT,   XXXXXXX,  XXXXXXX,  XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
 ),
 
+/* FUNCTION
+ * ,-----------------------------------------------------------------------------------.
+ * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   -  |   =  |   [  |   ]  |  \   |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO # |ISO / |Pg Up |Pg Dn |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_FUNC] = LAYOUT_planck_mit(
+    KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_ASTR,  KC_7, KC_8,  KC_9, KC_0, KC_MINUS, KC_PLUS,
+    KC_DEL,  KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_EQL,   KC_4, KC_5,  KC_6, KC_EQL, KC_LBRC, KC_RBRC,
+    _______, KC_F9,   KC_F10,   KC_F11,   KC_F12,  _______, KC_1, KC_2,  KC_3, XXXXXXX, KC_BSLS, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+),
+
 /* Lower
  * ,-----------------------------------------------------------------------------------.
  * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  | Bksp |
@@ -225,9 +244,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_planck_mit(
-    KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_ASTR,  KC_7, KC_8,  KC_9, KC_0, KC_MINUS, KC_PLUS,
-    KC_DEL,  KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_EQL,   KC_4, KC_5,  KC_6, KC_EQL, KC_LBRC, KC_RBRC,
-    _______, KC_F9,   KC_F10,   KC_F11,   KC_F12,  _______, KC_1, KC_2,  KC_3, XXXXXXX, KC_BSLS, _______,
+    KC_GRV,  _______,   _______,   _______,   _______,   KC_ASTR,  KC_7, KC_8,  KC_9, KC_0, KC_MINUS, KC_PLUS,
+    KC_DEL,  _______,   _______,   _______,   _______,   KC_EQL,   KC_4, KC_5,  KC_6, KC_EQL, KC_LBRC, KC_RBRC,
+    _______, _______,   _______,   _______,   _______,  _______, KC_1, KC_2,  KC_3, XXXXXXX, KC_BSLS, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
@@ -243,7 +262,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER_WOW] = LAYOUT_planck_mit(
-    _______, KC_1, KC_2,   KC_3, KC_4,  XXXXXXX, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, KC_BSPC,
+    KC_GRV, KC_1, KC_2,   KC_3, KC_4,  XXXXXXX, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, KC_BSPC,
     _______,  KC_5,   KC_6,   KC_7,   KC_INS,   KC_F5,   KC_F6,   KC_UNDS,    KC_PLUS,    KC_LCBR, KC_RCBR, KC_PIPE,
     _______, KC_8,   KC_9,   KC_0,   KC_DEL,  KC_DEL,  ARROW,  ARROW, S(KC_NUBS), KC_HOME, KC_END,  _______,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_MNXT,    KC_VOLD, KC_VOLU, XXXXXXX
@@ -313,14 +332,15 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 		case SPACE_FN:
 			return 200;
 			break;	
-		case SPACE_FN2:
-			return 200;
+		case RAISE_WOW:
+			return 50;
 			break;
-		*/
+		// lower 나 raise같은 mod tap에서는 적용안됩니다. 커스텀 tap를 위한 딜레이입니다 
 		case LOWER_WOW:
 			return 50;
 			break;	
-		case RAISE_WOW:
+		*/
+		case SPACE_FN2:
 			return 50;
 			break;
         default:
