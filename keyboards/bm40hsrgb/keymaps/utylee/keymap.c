@@ -191,8 +191,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   */
   [_SPACE_FN2] = LAYOUT_planck_mit(
       KC_PSCR,  KC_F1, KC_F2,    KC_F3,   KC_F4,  WOW,  MAGIC_TOGGLE_NKRO , KC_HOME,KC_PGDN,  KC_PGUP, KC_END    ,    _______, 
-      XXXXXXX,  KC_F5, KC_F6,  KC_F7,  KC_F8,  QWERTY,  QWERTY,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   MAC, 
-      XXXXXXX,  KC_F9, KC_F10,  KC_F11,   KC_F12, ARROW , ARROW, _______, XXXXXXX,  XXXXXXX,     XXXXXXX,    XXXXXXX, 
+      XXXXXXX,  KC_F5, KC_F6,  KC_F7,  KC_F8,  QWERTY,  QWERTY,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
+      XXXXXXX,  KC_F9, KC_F10,  KC_F11,   KC_F12, ARROW , ARROW, KC_DEL, KC_DEL,  KC_INS,     KC_INS,    XXXXXXX, 
       XXXXXXX,  KC_MPLY, KC_MPRV, KC_MNXT,   XXXXXXX,  XXXXXXX,  XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
 ),
 
@@ -246,7 +246,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RAISE] = LAYOUT_planck_mit(
     KC_GRV,  _______,   _______,   _______,   _______,   KC_ASTR,  KC_7, KC_8,  KC_9, KC_0, KC_MINUS, KC_PLUS,
     KC_DEL,  _______,   _______,   _______,   _______,   KC_EQL,   KC_4, KC_5,  KC_6, KC_EQL, KC_LBRC, KC_RBRC,
-    _______, _______,   _______,   _______,   _______,  _______, KC_1, KC_2,  KC_3, XXXXXXX, KC_BSLS, _______,
+    _______, _______,   _______,   _______,   _______,  _______, KC_1, KC_2,  KC_3, XXXXXXX, KC_BSLS, KC_DEL,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
@@ -282,7 +282,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RAISE_WOW] = LAYOUT_planck_mit(
     KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_ASTR,  KC_7, KC_8,  KC_9, KC_0, KC_MINUS, KC_PLUS,
     _______,  KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_EQL,   KC_4, KC_5,  KC_6, KC_EQL, KC_LBRC, KC_RBRC,
-    _______, KC_F9,   KC_F10,   KC_F11,   KC_F12,  KC_F11, _______, _______,  KC_3, KC_UP, KC_BSLS, _______,
+    _______, KC_F9,   KC_F10,   KC_F11,   KC_F12,  KC_F11, _______, _______,  KC_3, KC_UP, KC_BSLS, KC_DEL,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
