@@ -17,6 +17,46 @@
 
 #include "config_common.h"
 
+/* <<<<<<< HEAD */
+#define FORCE_NKRO
+
+/* USB Device descriptor parameter */
+#define VENDOR_ID       0x4B50 // "KP"
+#define PRODUCT_ID      0x3430 // "40"
+#define DEVICE_VER      0x0001
+#define MANUFACTURER    KPRepublic
+#define PRODUCT         BM40 Hotswap RGB
+#define BACKLIGHT_PIN   B7
+#define BACKLIGHT_LEVELS 3
+
+#define IGNORE_MOD_TAP_INTERRUPT
+/* #define TAPPING_TERM	200 */
+#define TAPPING_TERM	190
+#define TAPPING_TERM_PER_KEY
+
+// 연이어 모드 키가 눌릴 경우 모드 모드가 안켜지는 문제를 해결하는 코드입니다
+#define TAPPING_FORCE_HOLD 
+#define TAPPING_FORCE_HOLD_PER_KEY
+
+#define RETRO_TAPPING
+#define RETRO_TAPPING_PER_KEY
+//#define PERMISSIVE_HOLD
+//#define PERMISSIVE_HOLD_PER_KEY
+#define HOLD_ON_OTHER_KEY_PRESS
+#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
+
+//#define AUTO_SHIFT_TIMEOUT 150
+//#define AUTO_SHIFT_TIMEOUT_PER_KEY
+//#define RETRO_SHIFT
+//#define NO_AUTO_SHIFT_SPECIAL
+
+//auto-shift 동작시 ctrl 등 modifier가 눌려있어도 동작하게끔 합니다
+//#define AUTO_SHIFT_MODIFIERS
+
+
+/* ======= */
+/* >>>>>>> 7ea54a78376aee85a051a49185aa3555e8da41d2 */
+
 /* key matrix size */
 #define MATRIX_ROWS 4
 #define MATRIX_COLS 12
