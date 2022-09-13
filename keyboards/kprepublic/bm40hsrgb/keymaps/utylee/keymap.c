@@ -21,6 +21,7 @@ enum layers {
   _WOW,
   _NUM,
   _SPACE_FN2,
+  _SPACE_FN2_MAC,
   _FUNC,
   _LOWER,
   _RAISE,
@@ -70,6 +71,7 @@ enum planck_keycodes {
 #define SPACE_FN LT(_NUM, KC_SPC)
 #define SPACE_FN2 LT(_SPACE_FN2, KC_BSPC)
 #define SPACE_FN2_R LT(_SPACE_FN2, KC_SPC) // backspace가 아닌 이름대로 space로 동작합니다
+#define SPACE_FN2_MAC LT(_SPACE_FN2_MAC, KC_BSPC)
 #define ESC_FN2 LT(_SPACE_FN2, KC_ESC)
 /* #define SPACE_FN2 LT(_SPACE_FN2, KC_SPC) */
 
@@ -142,7 +144,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______,  _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______, _______,
   /*{KC_LCTL,  KC_A,    KC_S,    KC_D,    LT(_S, KC_F),    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT},*/
   _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______, _______,  _______, _______,
-  _______, _______, _______, _______, _______,   _______,  _______,  _______, KC_F18, KC_RGUI,   _______
+  _______, _______, _______, _______, _______,   SPACE_FN2_MAC,  _______,  _______, KC_F18, KC_RGUI,   _______
 ),
 
 /* WOW    wow 등 게임용 숫자를 간편하게 누를수있는 
@@ -265,6 +267,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*     XXXXXXX,   KC_F5, KC_F6,  KC_F7,   KC_F8, KC_INS , KC_INS, KC_DEL, KC_DEL,  KC_INS,     KC_INS,    XXXXXXX, */ 
   /*     XXXXXXX,  KC_F9, KC_F10,  KC_F11,   KC_F12,  XXXXXXX,  XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX */
 /* ), */
+
+
+  /* Space fn 2 MAC 
+  * ,-----------------------------------------------------------------------------------.
+  * |PRNT SC|      |  UP  |      |      |      |      |      |      |      |      |SLEEP |
+  * |-------+------+------+------+------+-------------+------+------+------+------+------|
+  * |       | LEFT | DOWN | RIGHT|      |      |      | LEFT | DOWN |  UP  | RIGHT|      |
+  * |-------+------+------+------+------+------|------+------+------+------+------+------| 
+  * |       |      |      |      |      |      |      |      |      |      |      |      |
+  * |-------+------+------+------+------+------+------+------+------+------+------+------|
+  * |       |      |      |      |      |             |      | MUTE |VOLDWN|VOL UP|      |
+  * `-----------------------------------------------------------------------------------'
+  */
+  [_SPACE_FN2_MAC] = LAYOUT_planck_mit(
+      KC_PSCR,  KC_F1, KC_F2,    KC_F3,   KC_F4, WOW ,WOW , KC_HOME,KC_PGDN,  KC_PGUP, KC_END    ,    _______, 
+      KC_ENTER,  KC_LEFT, KC_DOWN,  KC_UP,  KC_RIGHT,  QWERTY,  MAC,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
+      XXXXXXX,   _______, _______,  _______,   _______, KC_F19 , KC_F19, KC_DEL, KC_DEL,  KC_F19,     KC_F19,    XXXXXXX, 
+      XXXXXXX,  _______, _______,  _______,   _______,  XXXXXXX,  XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
+),
+  // insert가 없어서 가상으로 F19에 할당한 레이어입니다
 
 /* FUNCTION
  * ,-----------------------------------------------------------------------------------.
@@ -531,6 +553,12 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
             // Immediately select the hold action when another key is pressed.
             return true;
 		case SPACE_FN2:
+            // Immediately select the hold action when another key is pressed.
+            return true;
+		case SPACE_FN2_R:
+            // Immediately select the hold action when another key is pressed.
+            return true;
+		case SPACE_FN2_MAC:
             // Immediately select the hold action when another key is pressed.
             return true;
 		case NUM:
