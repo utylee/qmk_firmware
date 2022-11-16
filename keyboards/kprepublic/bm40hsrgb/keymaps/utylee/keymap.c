@@ -19,6 +19,7 @@ enum layers {
   _QWERTY,
   _MAC,
   _WOW,
+  _ABLETON,
   _NUM,
   _SPACE_FN2,
   _SPACE_FN2_MAC,
@@ -37,6 +38,7 @@ enum planck_keycodes {
   QWERTY = SAFE_RANGE,
   MAC,
   WOW, 
+  ABLETON,
   /*
   ARROW	
   COLEMAK,
@@ -174,6 +176,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* _______, KC_LALT, KC_LALT, LOWER_WOW, KC_SPC, SPACE_FN2, NUM ,  RAISE,   KC_RALT, KC_LGUI, _______ */   
 
 
+
+/* ABLETON    ableton 등 유틸용 간편하게 누를수있는 
+ * ,-----------------------------------------------------------------------------------.
+ * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
+ * |------+------+------+------+------+-------------+------+------+------+------+------|
+ * | Esc  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  "   |
+ * |------+------+------+------+------+------|------+------+------+------+------+------|
+ * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Enter |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | Brite| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * | _______| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |_______ |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_ABLETON] = LAYOUT_planck_mit(
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
+    KC_LCTL,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
+    /* KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M, LT(_FUNC, KC_COMM), LGUI_T(KC_DOT),  LCTL_T(KC_SLSH), SFT_T(KC_QUOT), */
+    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M, LT(_FUNC, KC_COMM), LGUI_T(KC_DOT),  RCTL_T(KC_SLSH), SFT_T(KC_QUOT),
+    _______, KC_LALT, KC_LCTRL, LOWER_WOW, KC_SPC, SPACE_FN2 , SPACE_FN ,  RAISE,   KC_LCTRL, KC_LALT, _______   
+    /* _______, KC_LALT, RAISE_WOW, LOWER_WOW, KC_SPC, SPACE_FN2_R , ESC_FN2 ,  RAISE,   KC_RCTRL, KC_LALT, _______ */   
+    /* _______, KC_LALT, RAISE_WOW, LOWER_WOW, KC_SPC, SPACE_FN2_R , ESC_FN2 ,  RAISE,   KC_RALT, KC_LGUI, _______ */   
+    /* CTL_T(KC_ESC),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT, */
+
+),
+    /* _______, KC_LALT, KC_LALT, LOWER_WOW, KC_SPC, SPACE_FN2, KC_SPC ,  RAISE,   KC_RALT, KC_LGUI, _______ */   
+    /* _______, KC_LALT, KC_LALT, LOWER_WOW, KC_SPC, SPACE_FN2, NUM ,  RAISE,   KC_RALT, KC_LGUI, _______ */   
+
+
+
 /* Arrow  방향키를 편하게 누를수 있기 위한 레이어 입니다
  * ,-----------------------------------------------------------------------------------.
  * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
@@ -256,7 +287,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * `-----------------------------------------------------------------------------------'
   */
   [_SPACE_FN2] = LAYOUT_planck_mit(
-      KC_PSCR,  KC_F1, KC_F2,    KC_F3,   KC_F4, WOW ,WOW , KC_HOME,KC_PGDN,  KC_PGUP, KC_END    ,    _______, 
+      KC_PSCR,  KC_F1, KC_F2,    KC_F3,   KC_F4, ABLETON ,WOW , KC_HOME,KC_PGDN,  KC_PGUP, KC_END    ,    _______, 
       KC_ENTER,  KC_LEFT, KC_DOWN,  KC_UP,  KC_RIGHT,  QWERTY,  MAC,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
       XXXXXXX,   _______, _______,  _______,   _______, KC_INS , KC_INS, KC_DEL, KC_DEL,  KC_INS,     KC_INS,    XXXXXXX, 
       XXXXXXX,  _______, _______,  _______,   _______,  XXXXXXX,  XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
@@ -524,7 +555,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 		case CTL_T(KC_ESC):
 			/* return 200; */   
 			/* return 100; */   
-			return 150;   
+			/* return 150; */   
+			return 110;   
 			break;
 
 		case RCTL_T(KC_SLSH):
@@ -868,6 +900,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed) {
         /* dprint("mode just switched to wow and this is a huge string\n"); */
         set_single_persistent_default_layer(_WOW);
+        /* rgblight_enable_noeeprom(); */
+      }
+      return false;
+      break;
+    case ABLETON:
+		/* dprint("come into wow\n"); */
+      if (record->event.pressed) {
+        /* dprint("mode just switched to wow and this is a huge string\n"); */
+        set_single_persistent_default_layer(_ABLETON);
         /* rgblight_enable_noeeprom(); */
       }
       return false;
