@@ -556,7 +556,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 			/* return 200; */   
 			/* return 100; */   
 			/* return 150; */   
-			return 110;   
+			return 140;   
 			break;
 
 		case RCTL_T(KC_SLSH):
