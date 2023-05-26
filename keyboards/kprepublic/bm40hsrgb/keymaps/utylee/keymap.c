@@ -164,10 +164,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_WOW] = LAYOUT_planck_mit(
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-    KC_LCTL,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
+    KC_LCTL,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    RGUI_T(KC_K),   RSFT_T(KC_L),    RALT_T(KC_SCLN), KC_ENT,
     /* KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M, LT(_FUNC, KC_COMM), LGUI_T(KC_DOT),  LCTL_T(KC_SLSH), SFT_T(KC_QUOT), */
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M, LT(_FUNC, KC_COMM), LGUI_T(KC_DOT),  RCTL_T(KC_SLSH), SFT_T(KC_QUOT),
-    _______, KC_LALT, RAISE_WOW, LOWER_WOW, KC_SPC, SPACE_FN2_R , ESC_FN2 ,  RAISE,   KC_RCTRL, KC_LALT, _______   
+    _______, KC_LALT, RAISE_WOW, LOWER_WOW, KC_SPC, SPACE_FN2_R , SPACE_FN ,  RAISE,   KC_RCTRL, KC_RALT, _______   
     /* _______, KC_LALT, RAISE_WOW, LOWER_WOW, KC_SPC, SPACE_FN2_R , ESC_FN2 ,  RAISE,   KC_RALT, KC_LGUI, _______ */   
     /* CTL_T(KC_ESC),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT, */
 
@@ -287,9 +287,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * `-----------------------------------------------------------------------------------'
   */
   [_SPACE_FN2] = LAYOUT_planck_mit(
-      KC_PSCR,  KC_F1, KC_F2,    KC_F3,   KC_F4, ABLETON ,WOW , KC_HOME,KC_PGDN,  KC_PGUP, KC_END    ,    _______, 
+      KC_PSCR,  KC_F1, KC_F2,    KC_F3,   KC_F4, WOW ,ABLETON , KC_HOME,KC_PGDN,  KC_PGUP, KC_END    ,    _______, 
       KC_ENTER,  KC_LEFT, KC_DOWN,  KC_UP,  KC_RIGHT,  QWERTY,  MAC,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
-      XXXXXXX,   _______, _______,  _______,   _______, KC_INS , KC_INS, KC_DEL, KC_DEL,  KC_INS,     KC_INS,    XXXXXXX, 
+      XXXXXXX,   WOW, WOW,  _______,   QWERTY, KC_INS , KC_INS, KC_DEL, KC_DEL,  KC_INS,     KC_INS,    XXXXXXX, 
       XXXXXXX,  _______, _______,  _______,   _______,  XXXXXXX,  XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
 ),
 
@@ -316,7 +316,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_SPACE_FN2_MAC] = LAYOUT_planck_mit(
       KC_PSCR,  KC_F1, KC_F2,    KC_F3,   KC_F4, WOW ,WOW , KC_HOME,KC_PGDN,  KC_PGUP, KC_END    ,    _______, 
       KC_ENTER,  KC_LEFT, KC_DOWN,  KC_UP,  KC_RIGHT,  QWERTY,  MAC,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
-      XXXXXXX,   _______, _______,  _______,   _______, KC_F19 , KC_F19, KC_DEL, KC_DEL,  KC_F19,     KC_F19,    XXXXXXX, 
+      /* XXXXXXX,   _______, _______,  _______,   _______, KC_F19 , KC_F19, KC_DEL, KC_DEL,  KC_F19,     KC_F19,    XXXXXXX, */ 
+      XXXXXXX,   WOW, WOW,  _______,   _______, QWERTY , KC_F19, KC_DEL, KC_DEL,  KC_F19,     KC_F19,    XXXXXXX, 
       XXXXXXX,  _______, _______,  _______,   _______,  XXXXXXX,  XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
 ),
   // insert가 없어서 가상으로 F19에 할당한 레이어입니다
@@ -396,7 +397,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER_WOW] = LAYOUT_planck_mit(
-    KC_GRV, KC_1, KC_2,   KC_3, KC_4,  KC_5, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, KC_BSPC,
+    KC_ESC, KC_1, KC_2,   KC_3, KC_4,  KC_5, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, KC_BSPC,
     _______,  KC_4,   KC_5,   KC_6,   KC_7,   KC_INS,   KC_F6,   KC_UNDS,    KC_PLUS,    KC_LCBR, KC_RCBR, KC_PIPE,
     _______, KC_7,   KC_8,   KC_9,   KC_0,  KC_DEL,  _______,  _______, S(KC_NUBS), KC_HOME, KC_END,  _______,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_MNXT,    KC_VOLD, KC_VOLU, XXXXXXX
@@ -415,7 +416,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE_WOW] = LAYOUT_planck_mit(
-    KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_ASTR,  KC_7, KC_8,  KC_9, KC_0, KC_MINUS, KC_PLUS,
+    KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_ASTR,  KC_7, KC_8,  KC_9, KC_0, KC_MINUS, KC_PLUS,
     _______,  KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_EQL,   KC_4, KC_5,  KC_6, KC_EQL, KC_LBRC, KC_RBRC,
     _______, KC_F9,   KC_F10,   KC_F11,   KC_F12,  KC_F11, _______, _______,  KC_3, KC_UP, KC_BSLS, KC_DEL,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
@@ -553,10 +554,9 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 			break;
 
 		case CTL_T(KC_ESC):
-			/* return 200; */   
 			/* return 100; */   
 			/* return 150; */   
-			return 140;   
+			return 200;   
 			break;
 
 		case RCTL_T(KC_SLSH):
