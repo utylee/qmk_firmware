@@ -317,7 +317,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_PSCR,  KC_F1, KC_F2,    KC_F3,   KC_F4, WOW ,WOW , KC_HOME,KC_PGDN,  KC_PGUP, KC_END    ,    _______, 
       KC_ENTER,  KC_LEFT, KC_DOWN,  KC_UP,  KC_RIGHT,  QWERTY,  MAC,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
       /* XXXXXXX,   _______, _______,  _______,   _______, KC_F19 , KC_F19, KC_DEL, KC_DEL,  KC_F19,     KC_F19,    XXXXXXX, */ 
-      XXXXXXX,   WOW, WOW,  _______,   _______, QWERTY , KC_F19, KC_DEL, KC_DEL,  KC_F19,     KC_F19,    XXXXXXX, 
+      XXXXXXX,   WOW, WOW,  _______,   QWERTY, MAC , KC_F19, KC_DEL, KC_DEL,  KC_F19,     KC_F19,    XXXXXXX, 
       XXXXXXX,  _______, _______,  _______,   _______,  XXXXXXX,  XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
 ),
   // insert가 없어서 가상으로 F19에 할당한 레이어입니다
