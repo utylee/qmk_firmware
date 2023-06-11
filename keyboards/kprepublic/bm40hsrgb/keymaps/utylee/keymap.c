@@ -289,7 +289,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_SPACE_FN2] = LAYOUT_planck_mit(
       KC_PSCR,  KC_F1, KC_F2,    KC_F3,   KC_F4, WOW ,ABLETON , KC_HOME,KC_PGDN,  KC_PGUP, KC_END    ,    _______, 
       KC_ENTER,  KC_LEFT, KC_DOWN,  KC_UP,  KC_RIGHT,  QWERTY,  MAC,  KC_LEFT, KC_DOWN,  KC_UP,       KC_RIGHT,   _______, 
-      XXXXXXX,   WOW, WOW,  _______,   QWERTY, KC_INS , KC_INS, KC_DEL, KC_DEL,  KC_INS,     KC_INS,    XXXXXXX, 
+      XXXXXXX,   WOW, WOW,  _______,   QWERTY, MAC , KC_INS, KC_DEL, KC_DEL,  KC_INS,     KC_INS,    XXXXXXX, 
       XXXXXXX,  _______, _______,  _______,   _______,  XXXXXXX,  XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX
 ),
 
