@@ -398,7 +398,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_LOWER_WOW] = LAYOUT_planck_mit(
     KC_GRV, KC_1, KC_2,   KC_3, KC_4,  KC_5, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, KC_BSPC,
-    KC_ESC,  KC_4,   KC_5,   KC_6,   KC_7,   KC_INS,   KC_F6,   KC_UNDS,    KC_PLUS,    KC_LCBR, KC_RCBR, KC_PIPE,
+    _______,  KC_4,   KC_5,   KC_6,   KC_7,   KC_INS,   KC_F6,   KC_UNDS,    KC_PLUS,    KC_LCBR, KC_RCBR, KC_PIPE,
     _______, KC_7,   KC_8,   KC_9,   KC_0,  KC_DEL,  _______,  _______, S(KC_NUBS), KC_HOME, KC_END,  _______,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_MNXT,    KC_VOLD, KC_VOLU, XXXXXXX
 ),
