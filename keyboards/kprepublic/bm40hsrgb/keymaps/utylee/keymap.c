@@ -614,7 +614,10 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
             return false;
 		case SPACE_FN:
             // Immediately select the hold action when another key is pressed.
-            return false;
+            return true;
+			// _wow] 모드에서 num] 을 사용하려 했더니 딜레이가 걸려서 숫자입력이
+			// 답답했습니다 
+            /* return false; */
             
 		//case SFT_T(KC_QUOT):
 		//case SFT_T(KC_SLSH):
