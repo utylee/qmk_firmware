@@ -488,6 +488,9 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 			return 50;
 			break;
 		// lower 나 raise같은 mod tap에서는 적용안됩니다. 커스텀 tap를 위한 딜레이입니다 
+		case RAISE:
+			return 500;
+			break;
 		case LOWER_WOW:
 			return 50;
 			break;	
@@ -783,20 +786,41 @@ void autoshift_release_user(uint16_t keycode, bool shifted, keyrecord_t *record)
 //<-----auto-shift
 
 
-/*
+// 빠른 타이핑시에 중첩으로 입력돼도 끝까지 릴리즈 되기 전에 놓아지면 홀딩키 동작은 안되게끔
+// 롤링이 되게끔 하는 함수입니다
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
 		case CTL_T(KC_ESC):
             // Immediately select the hold action when another key is pressed.
-            return true;
+            return false;
+            /* return true; */
 		case SPACE_FN2:
             // Immediately select the hold action when another key is pressed.
+            return false;
+            /* return true; */
+		// 빠른타이핑시에 숫자 num 활성화 전후에 space가 씹히는 문제제거하기 위해 
+		// perssive hold config.h에서 활성화하면서 함수 전체를 살려봤습니다
+		 case SPACE_FN: 
+            // Immediately select the hold action when another key is pressed.
             return true;
-		// case SPACE_FN: 
+		/* raise 같은 mod 키는 permissive hold 적용대상이 아닌 것 같습니다.
+		   무조건 눌린 즉시 바로 적용인듯
+		// 빠르게 타이핑 할떄 raise 조합이 들어가서 원치않는 게 눌릴 경우가 있었습니다.
+		// ex)) ll -rt 가 ll -4t 로 입력되는 문제
+		 case RAISE: 
+            // Immediately select the hold action when another key is pressed.
+            return true;
+		 case RAISE_WOW: 
+            // Immediately select the hold action when another key is pressed.
+            return true;
+			*/
 		case NUM: 
              // Immediately select the hold action when another key is pressed. 
-             return true; 
+             return false; 
+             /* return true; */ 
 		//case SFT_T(KC_QUOT):
+		// permissive hold 추가하느라 함수전체 주석을 제거해서 살려는 놨는데
+		// 현재 아래조합키는 없는 것 같습니다
 		case SFT_T(KC_SLSH):
             // Immediately select the hold action when another key is pressed.
             return true;
@@ -806,7 +830,6 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
             return false;
     }
 }
-*/
 
 
 layer_state_t layer_state_set_user(layer_state_t state) {
