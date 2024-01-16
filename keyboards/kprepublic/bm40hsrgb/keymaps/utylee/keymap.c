@@ -105,7 +105,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* KC_LSFT, KC_Z,    KC_X,    KC_C,    LT(_NUM, KC_V),    KC_B,    KC_N,    LT(_FUNC, KC_M), KC_COMM, KC_DOT,  KC_SLSH, KC_QUOT, */
 	KC_LSFT, KC_Z,    KC_X,    KC_C,    LT(_NUM, KC_V),    KC_B,    KC_N,    LT(_FUNC, KC_M), LT(_FUNC, KC_COMM), KC_DOT,  RCTL_T(KC_SLSH), RSFT_T(KC_QUOT),
     /* _______, KC_LALT, KC_LGUI, LOWER,   CTL_T(KC_SPC), SPACE_FN2, SPACE_FN, RAISE,   KC_RALT, LALT_T(KC_RCTRL),   _______ */
-    _______, KC_LALT, KC_LCTRL, LOWER,   CTL_T(KC_SPC), SPACE_FN2, SPACE_FN, RAISE,   KC_LCTRL, KC_LALT,   _______
+    /* _______, KC_LALT, KC_LCTRL, LOWER,   CTL_T(KC_SPC), SPACE_FN2, SPACE_FN, RAISE,   KC_LCTRL, KC_LALT,   _______ */
+    _______, KC_LALT, RAISE_WOW, LOWER,   CTL_T(KC_SPC), SPACE_FN2, SPACE_FN, RAISE,   KC_LCTRL, KC_LALT,   _______
 ),
 
 /* [_QWERTY] = LAYOUT_planck_mit( */
