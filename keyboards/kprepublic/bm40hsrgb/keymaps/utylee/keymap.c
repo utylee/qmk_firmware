@@ -156,7 +156,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_WOW] = LAYOUT_planck_mit(KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC, KC_LCTL, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, RGUI_T(KC_K), RSFT_T(KC_L), RALT_T(KC_SCLN), KC_ENT,
                                /* KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M, LT(_FUNC, KC_COMM), LGUI_T(KC_DOT),  LCTL_T(KC_SLSH), SFT_T(KC_QUOT), */
-                               KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, LT(_FUNC, KC_COMM), LGUI_T(KC_DOT), RCTL_T(KC_SLSH), SFT_T(KC_QUOT), _______, KC_LALT, RAISE_WOW, LOWER_WOW, KC_SPC, SPACE_FN2_R, SPACE_FN, RAISE, KC_RCTRL, KC_RALT, _______
+        KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, LT(_FUNC, KC_COMM), LGUI_T(KC_DOT), RCTL_T(KC_SLSH), SFT_T(KC_QUOT), 
+		_______, KC_LALT, RAISE_WOW, LOWER_WOW, KC_SPC, SPACE_FN2_R, SPACE_FN, RAISE, KC_RCTRL, KC_RALT, _______
                                /* _______, KC_LALT, RAISE_WOW, LOWER_WOW, KC_SPC, SPACE_FN2_R , ESC_FN2 ,  RAISE,   KC_RALT, KC_LGUI, _______ */
                                /* CTL_T(KC_ESC),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT, */
 
@@ -242,7 +243,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*     XXXXXXX,  KC_MPLY, KC_MPRV, KC_MNXT,   ARROW,  XXXXXXX,  XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU,  XXXXXXX */
     /* ), */
 
-    [_NUM] = LAYOUT_planck_mit(KC_PSCR, KC_7, KC_8, KC_9, KC_0, WOW, KC_ASTR, KC_7, KC_8, KC_9, KC_0, KC_BSPC, KC_SPC, KC_4, KC_5, KC_6, KC_SPC, QWERTY, KC_MINUS, KC_4, KC_5, KC_6, KC_PLUS, KC_ENT, KC_SPC, KC_1, KC_2, KC_3, KC_SPC, KC_SPC, KC_EQL, KC_1, KC_2, KC_3, KC_SPC, KC_SPC, XXXXXXX, KC_MPLY, KC_MPRV, KC_MNXT, XXXXXXX, XXXXXXX, KC_0, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX),
+    [_NUM] = LAYOUT_planck_mit(
+			KC_PSCR, KC_7, KC_8, KC_9, KC_0, KC_ASTR, WOW, KC_7, KC_8, KC_9, KC_0, KC_BSPC, 
+			KC_SPC, KC_4, KC_5, KC_6, KC_PLUS, KC_MINUS, KC_SPC, KC_4, KC_5, KC_6, KC_PLUS, KC_ENT,
+			/* KC_SPC, KC_4, KC_5, KC_6, KC_SPC, QWERTY, KC_MINUS, KC_4, KC_5, KC_6, KC_PLUS, KC_ENT, */
+		   	KC_SPC, KC_1, KC_2, KC_3, XXXXXXX, KC_SPC, KC_EQL, KC_1, KC_2, KC_3, KC_SPC, KC_SPC, 
+		   	/* KC_SPC, KC_1, KC_2, KC_3, KC_SPC, KC_SPC, KC_EQL, KC_1, KC_2, KC_3, KC_SPC, KC_SPC, */ 
+			XXXXXXX, KC_MPLY, KC_MPRV, KC_MNXT, XXXXXXX, XXXXXXX, KC_0, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX),
 
     // wow 제거 이전 원래 버전입니다
     /* [_NUM] = LAYOUT_planck_mit( */
@@ -263,7 +270,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |       |      |      |      |      |             |      | MUTE |VOLDWN|VOL UP|      |
      * `-----------------------------------------------------------------------------------'
      */
-    [_SPACE_FN2] = LAYOUT_planck_mit(KC_PSCR, KC_F1, KC_F2, KC_F3, KC_F4, WOW, ABLETON, KC_HOME, KC_PGDN, KC_PGUP, KC_END, _______, KC_ENTER, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, QWERTY, MAC, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, _______, XXXXXXX, WOW, WOW, _______, QWERTY, MAC, KC_INS, KC_DEL, KC_DEL, KC_INS, KC_INS, XXXXXXX, XXXXXXX, _______, _______, _______, _______, XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX),
+    [_SPACE_FN2] = LAYOUT_planck_mit(KC_PSCR, KC_F1, KC_F2, KC_F3, KC_F4, WOW, ABLETON, KC_HOME, KC_PGDN, KC_PGUP, KC_END, _______, 
+		KC_ENTER, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, QWERTY, MAC, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, _______, 
+		XXXXXXX, WOW, WOW, _______, QWERTY, MAC, KC_INS, KC_DEL, KC_DEL, KC_INS, KC_INS, XXXXXXX, XXXXXXX, _______, _______, _______, _______, XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX),
 
     // wow 레이어 제거전 원래 버전입니다
     /* [_SPACE_FN2] = LAYOUT_planck_mit( */
@@ -363,10 +372,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `-----------------------------------------------------------------------------------'
      */
     /* [_RAISE_WOW] = LAYOUT_planck_mit(KC_TILD, KC_F1, KC_F2, KC_F3, KC_F4, KC_ASTR, KC_7, KC_8, KC_9, KC_0, KC_MINUS, KC_PLUS, KC_ESC, KC_F5, KC_F6, KC_F7, KC_F8, KC_EQL, KC_4, KC_5, KC_6, KC_EQL, KC_LBRC, KC_RBRC, */
-    [_RAISE_WOW] = LAYOUT_planck_mit(KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_ASTR, KC_7, KC_8, KC_9, KC_0, KC_MINUS, KC_PLUS, KC_ESC, KC_F5, KC_F6, KC_F7, KC_F8, KC_EQL, KC_4, KC_5, KC_6, KC_EQL, KC_LBRC, KC_RBRC,
+    [_RAISE_WOW] = LAYOUT_planck_mit(KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_ASTR, KC_7, KC_8, KC_9, KC_0, KC_MINUS, KC_PLUS, 
+	KC_ESC, KC_F5, KC_F6, KC_F7, KC_F8, KC_EQL, KC_4, KC_5, KC_6, KC_EQL, KC_LBRC, KC_RBRC,
                                      /* _______, KC_F9,   KC_F10,   KC_F11,   KC_F12,  KC_F11, _______, _______,  KC_3, KC_UP, KC_BSLS, KC_DEL, */
                                      /* Finals 에서 F11전체화면 을 막기위해 F11은 제거합니다 */
-                                     _______, KC_F9, KC_F10, XXXXXXX, KC_F12, XXXXXXX, _______, _______, KC_3, KC_UP, KC_BSLS, KC_DEL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX),
+    _______, KC_F9, KC_F10, XXXXXXX, KC_F12, XXXXXXX, _______, _______, KC_3, KC_UP, KC_BSLS, KC_DEL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX),
 
     /* Adjust (Lower + Raise)
      *                      v------------------------RGB CONTROL--------------------v
