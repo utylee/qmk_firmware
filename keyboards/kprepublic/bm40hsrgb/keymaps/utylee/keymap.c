@@ -22,6 +22,7 @@ enum layers {
     _ABLETON,
     _NUM,
     _SPACE_FN2,
+    _SPACE_FN2_WOW,
     _SPACE_FN2_MAC,
     _FUNC,
     _LOWER,
@@ -71,7 +72,7 @@ enum planck_keycodes {
 #define NUM LT(_FUNC, KC_SCLN)
 #define SPACE_FN LT(_NUM, KC_SPC)
 #define SPACE_FN2 LT(_SPACE_FN2, KC_BSPC)
-#define SPACE_FN2_R LT(_SPACE_FN2, KC_SPC) // backspace가 아닌 이름대로 space로 동작합니다
+#define SPACE_FN2_R LT(_SPACE_FN2_WOW, KC_SPC) // backspace가 아닌 이름대로 space로 동작합니다
 #define SPACE_FN2_MAC LT(_SPACE_FN2_MAC, KC_BSPC)
 #define ESC_FN2 LT(_SPACE_FN2, KC_ESC)
 /* #define SPACE_FN2 LT(_SPACE_FN2, KC_SPC) */
@@ -103,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                   KC_LSFT, KC_Z, KC_X, KC_C, LT(_NUM, KC_V), KC_B, KC_N, LT(_FUNC, KC_M), LT(_FUNC, KC_COMM), KC_DOT, RCTL_T(KC_SLSH), RSFT_T(KC_QUOT),
                                   /* _______, KC_LALT, KC_LGUI, LOWER,   CTL_T(KC_SPC), SPACE_FN2, SPACE_FN, RAISE,   KC_RALT, LALT_T(KC_RCTRL),   _______ */
                                   /* _______, KC_LALT, KC_LCTRL, LOWER,   CTL_T(KC_SPC), SPACE_FN2, SPACE_FN, RAISE,   KC_LCTRL, KC_LALT,   _______ */
-                                  _______, KC_LALT, RAISE_WOW, LOWER, CTL_T(KC_SPC), SPACE_FN2,/*center*/ SPACE_FN, RAISE, KC_LCTRL, KC_LALT, _______),
+                                  _______, KC_LALT, RAISE_WOW, LOWER, CTL_T(KC_SPC), SPACE_FN2,/*center*/ SPACE_FN, RAISE, KC_RCTRL, KC_RALT, _______),
 
     /* [_QWERTY] = LAYOUT_planck_mit( */
     /*     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, */
@@ -275,6 +276,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_ENTER, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, QWERTY, MAC, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, _______, 
 		XXXXXXX, WOW, WOW, _______, QWERTY, MAC, KC_INS, KC_DEL, KC_DEL, KC_INS, KC_INS, XXXXXXX, XXXXXXX, _______, _______, _______, _______, XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX),
 
+    [_SPACE_FN2_WOW] = LAYOUT_planck_mit(XXXXXXX, KC_F1, KC_F2, KC_F3, KC_F4, WOW, ABLETON, KC_HOME, KC_PGDN, KC_PGUP, KC_END, _______, 
+		KC_ENTER, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, QWERTY, MAC, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, _______, 
+		XXXXXXX, WOW, WOW, _______, QWERTY, MAC, KC_INS, KC_DEL, KC_DEL, KC_INS, KC_INS, XXXXXXX, XXXXXXX, _______, _______, _______, _______, XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX),
     // wow 레이어 제거전 원래 버전입니다
     /* [_SPACE_FN2] = LAYOUT_planck_mit( */
     /*     KC_PSCR,  KC_F1, KC_F2,    KC_F3,   KC_F4,  WOW,  WOW , KC_HOME,KC_PGDN,  KC_PGUP, KC_END    ,    _______, */
@@ -377,7 +381,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_ESC, KC_F5, KC_F6, KC_F7, KC_F8, KC_EQL, KC_4, KC_5, KC_6, KC_EQL, KC_LBRC, KC_RBRC,
                                      /* _______, KC_F9,   KC_F10,   KC_F11,   KC_F12,  KC_F11, _______, _______,  KC_3, KC_UP, KC_BSLS, KC_DEL, */
                                      /* Finals 에서 F11전체화면 을 막기위해 F11은 제거합니다 */
-    _______, KC_F9, KC_F10, XXXXXXX, KC_F12, XXXXXXX, _______, _______, KC_3, KC_UP, KC_BSLS, KC_DEL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX),
+    _______, KC_F9, KC_F10, KC_F11, KC_F12, XXXXXXX, _______, _______, KC_3, KC_UP, KC_BSLS, KC_DEL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX),
 
     /* Adjust (Lower + Raise)
      *                      v------------------------RGB CONTROL--------------------v
