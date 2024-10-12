@@ -277,7 +277,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		XXXXXXX, WOW, WOW, _______, QWERTY, MAC, KC_INS, KC_DEL, KC_DEL, KC_INS, KC_INS, XXXXXXX, XXXXXXX, _______, _______, _______, _______, XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX),
 
     [_SPACE_FN2_WOW] = LAYOUT_planck_mit(XXXXXXX, KC_F1, KC_F2, KC_F3, KC_F4, WOW, ABLETON, KC_HOME, KC_PGDN, KC_PGUP, KC_END, _______, 
-		KC_ENTER, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, QWERTY, MAC, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, _______, 
+		KC_LCTL, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, QWERTY, MAC, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, _______, 
 		XXXXXXX, WOW, WOW, _______, QWERTY, MAC, KC_INS, KC_DEL, KC_DEL, KC_INS, KC_INS, XXXXXXX, XXXXXXX, _______, _______, _______, _______, XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX),
     // wow 레이어 제거전 원래 버전입니다
     /* [_SPACE_FN2] = LAYOUT_planck_mit( */
